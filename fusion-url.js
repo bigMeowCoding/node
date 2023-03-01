@@ -1,5 +1,5 @@
 function createCMsWebViewUrl(url) {
-  return `/cms_webview/index?url=${encodeURIComponent(url)}`;
+  return `/cms_webview/index?url=${url}`;
 }
 
 function createLegoIndexFusionUrl(templateKey) {
@@ -17,17 +17,17 @@ function createLegoIndexFusionUrlByKeys(templateKeys) {
 
 function createBargainIndexFusionUrl() {
   const url =
-    "https://{FUSION_DOMAIN}/bos/bargain/{CID}/{VID}/{PRODUCT_INSTANCE_ID}/h5/index";
+    "https://{CID}.bargain.{DOMAIN}/bos/bargain/{CID}/{VID}/{PRODUCT_INSTANCE_ID}/h5/index";
   return createCMsWebViewUrl(url);
 }
 function createBargainMineFusionUrl() {
   const url =
-    "https://{FUSION_DOMAIN}/bos/bargain/{CID}/{VID}/{PRODUCT_INSTANCE_ID}/h5/mine";
+    "https://{CID}.bargain.{DOMAIN}/bos/bargain/{CID}/{VID}/{PRODUCT_INSTANCE_ID}/h5/mine";
   return createCMsWebViewUrl(url);
 }
 function createBargainDetailFusionUrl() {
   const url =
-      "https://{FUSION_DOMAIN}/bos/bargain/{CID}/{VID}/{PRODUCT_INSTANCE_ID}/h5/product";
+    "https://{CID}.bargain.{DOMAIN}/bos/bargain/{CID}/{VID}/{PRODUCT_INSTANCE_ID}/h5/product";
   return createCMsWebViewUrl(url);
 }
 module.exports = {
@@ -35,5 +35,5 @@ module.exports = {
   createLegoIndexFusionUrl,
   createBargainIndexFusionUrl,
   createBargainMineFusionUrl,
-  createBargainDetailFusionUrl
+  createBargainDetailFusionUrl,
 };
